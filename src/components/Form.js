@@ -1,6 +1,9 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
 const Form = ({ input, setInput, todos, setTodos }) => {
 
     const onInputChange = (event) => {
@@ -24,7 +27,7 @@ const Form = ({ input, setInput, todos, setTodos }) => {
             />
             <button
                 className="button-add"
-                type="submit">Add</button>
+                type="submit"> <FontAwesomeIcon icon={faPlus } /></button>
         </form>
     )
 }
