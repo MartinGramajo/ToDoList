@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
     /*funcion para editar y actualizar*/
@@ -13,6 +13,15 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
         setTodos(newTodo);
         setEditTodo("");
     }
+    /*usuamos el useEffect para modificar el item de la lista en el input y volver a guardar*/ 
+    useEffect(() => {
+        if (editTodo) {
+            setInput(editTodo.title);
+        } else {
+            setInput('')
+        }
+    }, [setInput, editTodo])
+
     /* funcion para capturar lo que se escribe en el input*/
     const onInputChange = (event) => {
         setInput(event.target.value);
@@ -40,7 +49,7 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
             />
             <button
                 className="button-add"
-                type="submit"> <FontAwesomeIcon icon={faPlus} /></button>
+                type="submit">{editTodo ? <FontAwesomeIcon icon={faEdit} />: <FontAwesomeIcon icon={faPlus} />} </button>
         </form>
     )
 }
