@@ -1,9 +1,15 @@
 import './App.css';
+import Header from './components/Header';
 
-function App() {
+const App = ()=>  {
   return (
-    <div>
-      App
+    <div className="container">
+      <div className="app-wrapper">
+        <div>
+          <Header />
+        </div>
+
+      </div>
     </div>
   );
 }
