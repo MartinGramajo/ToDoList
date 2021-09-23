@@ -38,7 +38,7 @@ return (
                 <input
                     type="text"
                     value={todo.title}
-                    className="list"
+                    className={`list ${todo.completed ? "complete" : ''}`}
                     onChange={handleChange}
                 />
                 <div>
