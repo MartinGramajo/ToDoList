@@ -3,6 +3,7 @@ import './App.css';
 import Form from './components/Form';
 import Header from './components/Header';
 import { useState } from 'react'
+import ToDosList from './components/ToDosList';
 
 const App = () => {
 
@@ -23,11 +24,13 @@ const App = () => {
             setInput={setInput}
             todos={todos}
             setTodos={setTodos}
-
           />
-
         </div>
-
+        <div>
+          <ToDosList
+            todos={todos}
+            setTodos={setTodos} />
+        </div>
       </div>
     </div>
   );
