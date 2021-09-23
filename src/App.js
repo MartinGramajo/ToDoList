@@ -12,6 +12,10 @@ const App = () => {
 
   //State lista de to do
   const [todos, setTodos] = useState([]);
+
+  //State del editar 
+  const [editTodo, setEditTodo]= useState(null)
+
   return (
     <div className="container">
       <div className="app-wrapper">
@@ -24,12 +28,16 @@ const App = () => {
             setInput={setInput}
             todos={todos}
             setTodos={setTodos}
+            editTodo={editTodo}
+            setEditTodo={setEditTodo}
           />
         </div>
         <div>
           <ToDosList
             todos={todos}
-            setTodos={setTodos} />
+            setTodos={setTodos}
+            setEditTodo={setEditTodo}
+          />
         </div>
       </div>
     </div>
